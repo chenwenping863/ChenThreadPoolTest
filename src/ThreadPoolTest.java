@@ -16,27 +16,33 @@ public class ThreadPoolTest {
         * */
 
         //==============================================
-//        ExecutorService fixedThreadExecutor = Executors.newFixedThreadPool(5);
-//        for (int i = 0; i < 10; i ++) {
-//            MyRunnable myRunnable = new MyRunnable(i);
-//            fixedThreadExecutor.execute(myRunnable);
-//        }
+        System.out.print("\n====fixedThreadExecutor==========================================\n");
+        ExecutorService fixedThreadExecutor = Executors.newFixedThreadPool(5);
+        for (int i = 0; i < 10; i ++) {
+            MyRunnable myRunnable = new MyRunnable(i);
+            fixedThreadExecutor.execute(myRunnable);
+        }
 
         //==============================================
-       /* ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        System.out.print("\n====cachedThreadPool==========================================\n");
+
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         for (int i = 0; i < 10; i ++) {
             MyRunnable myRunnable = new MyRunnable(i);
             cachedThreadPool.execute(myRunnable);
-        }*/
+        }
 
        //=================================================
-        /*ExecutorService scheduledThreadExecutor = Executors.newScheduledThreadPool(5);
+        System.out.print("\n====scheduledThreadExecutor==========================================\n");
+
+        ExecutorService scheduledThreadExecutor = Executors.newScheduledThreadPool(5);
         for (int i = 0; i < 10; i ++) {
             MyRunnable myRunnable = new MyRunnable(i);
             scheduledThreadExecutor.execute(myRunnable);
-        }*/
+        }
 
         //=================================================
+        System.out.print("\n====singleThreadExecutor==========================================\n");
 
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
         for (int i = 0; i < 10; i ++) {
@@ -63,9 +69,7 @@ public class ThreadPoolTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             System.out.print("\n打印消息：" + "完成第" + threadNum + "号线程\n");
-
         }
     }
 
